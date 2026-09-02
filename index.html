@@ -2,9 +2,7 @@
 <html lang="ar" dir="rtl">
 
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>نبض للرعاية البيطرية</title>
@@ -24,29 +22,26 @@
 
 body{
     font-family:'Tajawal',sans-serif;
-    background:#f6f5f1;
+    background:#f7f5f0;
     color:#354744;
 }
-
-
-/* ===== رأس الموقع ===== */
 
 header{
     background:#354744;
     color:white;
     text-align:center;
-    padding:35px 20px 75px;
+    padding:30px 20px 75px;
 }
 
 .logo{
-    width:110px;
-    height:110px;
+    width:115px;
+    height:115px;
     margin:auto;
-    margin-bottom:18px;
+    margin-bottom:15px;
     border-radius:50%;
     overflow:hidden;
+    background:white;
     border:3px solid #F2CA98;
-    background:#354744;
 }
 
 .logo img{
@@ -62,31 +57,26 @@ header h1{
 
 header p{
     color:#F2CA98;
-    margin-top:8px;
-    font-size:16px;
+    margin-top:7px;
 }
-
-
-/* ===== معلومات العيادة ===== */
 
 .info{
     background:white;
     margin:-45px 15px 20px;
-    padding:22px;
+    padding:20px;
     border-radius:20px;
     text-align:center;
     box-shadow:0 8px 25px rgba(0,0,0,.08);
 }
 
 .info p{
-    margin:10px 0;
-    font-weight:500;
+    margin:8px 0;
 }
 
 .buttons{
     display:flex;
     gap:10px;
-    margin-top:18px;
+    margin-top:15px;
 }
 
 .btn{
@@ -94,8 +84,9 @@ header p{
     padding:14px;
     border-radius:12px;
     text-decoration:none;
-    font-weight:800;
     text-align:center;
+    font-weight:800;
+    cursor:pointer;
 }
 
 .call{
@@ -108,8 +99,14 @@ header p{
     color:#354744;
 }
 
+.booking{
+    background:white;
+    color:#354744;
+    border:2px solid #F2CA98;
+}
 
-/* ===== البحث ===== */
+
+/* البحث */
 
 .search{
     padding:0 15px;
@@ -118,16 +115,15 @@ header p{
 
 .search input{
     width:100%;
-    padding:16px;
+    padding:15px;
     border-radius:15px;
     border:1px solid #ddd;
     font-family:'Tajawal';
     font-size:16px;
-    outline:none;
 }
 
 
-/* ===== التصنيفات ===== */
+/* الأقسام */
 
 .categories{
     display:flex;
@@ -140,7 +136,7 @@ header p{
     white-space:nowrap;
     border:1px solid #ddd;
     background:white;
-    padding:11px 17px;
+    padding:11px 18px;
     border-radius:25px;
     font-family:'Tajawal';
     font-weight:bold;
@@ -154,7 +150,7 @@ header p{
 }
 
 
-/* ===== المنتجات ===== */
+/* المنتجات */
 
 .section-title{
     padding:10px 20px 20px;
@@ -165,7 +161,7 @@ header p{
 .products{
     display:grid;
     grid-template-columns:repeat(2,1fr);
-    gap:15px;
+    gap:14px;
     padding:0 15px 110px;
 }
 
@@ -177,12 +173,12 @@ header p{
 }
 
 .product-image{
-    height:150px;
-    background:#f1eee8;
+    height:130px;
+    background:#f0ede7;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:65px;
+    font-size:55px;
 }
 
 .product-content{
@@ -190,37 +186,34 @@ header p{
 }
 
 .product h3{
-    font-size:16px;
+    font-size:15px;
     min-height:50px;
 }
 
 .price-row{
     display:flex;
-    align-items:center;
     justify-content:space-between;
-    margin-top:10px;
+    align-items:center;
 }
 
 .price{
-    font-weight:bold;
-    font-size:16px;
-    color:#354744;
+    font-weight:800;
 }
 
 .add{
-    width:42px;
-    height:42px;
+    width:40px;
+    height:40px;
     border:none;
     border-radius:50%;
     background:#F2CA98;
     color:#354744;
-    font-size:25px;
+    font-size:24px;
     font-weight:bold;
     cursor:pointer;
 }
 
 
-/* ===== السلة ===== */
+/* السلة */
 
 .cart-button{
     position:fixed;
@@ -232,11 +225,9 @@ header p{
     padding:14px 20px;
     border-radius:30px;
     font-family:'Tajawal';
-    font-size:17px;
     font-weight:bold;
-    cursor:pointer;
-    box-shadow:0 5px 20px rgba(0,0,0,.2);
-    z-index:50;
+    font-size:16px;
+    z-index:100;
 }
 
 .cart-count{
@@ -246,30 +237,30 @@ header p{
     border-radius:50%;
 }
 
-.cart-modal{
+.modal{
     display:none;
     position:fixed;
     inset:0;
-    background:rgba(0,0,0,.5);
-    z-index:100;
+    background:rgba(0,0,0,.55);
+    z-index:200;
 }
 
-.cart-box{
+.modal-box{
     position:absolute;
     bottom:0;
     width:100%;
+    max-height:90vh;
+    overflow:auto;
     background:white;
     padding:25px;
     border-radius:25px 25px 0 0;
-    max-height:75vh;
-    overflow:auto;
 }
 
 .close{
     float:left;
     border:none;
-    padding:8px 12px;
     background:#eee;
+    padding:8px 13px;
     border-radius:10px;
     cursor:pointer;
 }
@@ -287,34 +278,71 @@ header p{
     margin:20px 0;
 }
 
-.order{
+.order-btn,
+.submit-booking{
+    width:100%;
+    border:none;
     display:block;
     background:#F2CA98;
     color:#354744;
-    text-align:center;
     padding:16px;
-    border-radius:15px;
-    text-decoration:none;
-    font-weight:bold;
+    border-radius:14px;
+    font-family:'Tajawal';
+    font-size:17px;
+    font-weight:800;
+    cursor:pointer;
 }
 
 
-/* ===== الفوتر ===== */
+/* نموذج الحجز */
+
+.form-group{
+    margin:15px 0;
+}
+
+.form-group label{
+    display:block;
+    font-weight:bold;
+    margin-bottom:6px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+    width:100%;
+    padding:13px;
+    border:1px solid #ddd;
+    border-radius:12px;
+    font-family:'Tajawal';
+    font-size:16px;
+}
+
+.form-group textarea{
+    height:100px;
+    resize:vertical;
+}
+
+.price-display{
+    background:#f7f5f0;
+    padding:14px;
+    border-radius:12px;
+    margin:10px 0;
+    font-weight:bold;
+    color:#354744;
+}
 
 footer{
     background:#354744;
     color:white;
     text-align:center;
-    padding:30px 15px;
+    padding:30px 20px;
 }
 
 footer h3{
     color:#F2CA98;
-    margin-bottom:12px;
+    margin-bottom:10px;
 }
 
-
-/* ===== الهاتف ===== */
 
 @media(max-width:500px){
 
@@ -322,19 +350,22 @@ footer h3{
         font-size:25px;
     }
 
+    .buttons{
+        flex-direction:column;
+    }
+
     .products{
-        gap:10px;
         padding:0 10px 110px;
+        gap:10px;
     }
 
     .product-image{
-        height:130px;
+        height:115px;
     }
 
 }
 
 </style>
-
 </head>
 
 
@@ -357,14 +388,9 @@ footer h3{
 
 <div class="info">
 
-<p>
-📍 النجف الأشرف – شارع عسكري مدارس – مقابل مضخة مياه العسكري
-</p>
+<p>📍 النجف الأشرف – شارع عسكري مدارس – مقابل مضخة مياه العسكري</p>
 
-<p>
-📞 07811141207
-</p>
-
+<p>📞 07811141207</p>
 
 <div class="buttons">
 
@@ -372,14 +398,15 @@ footer h3{
 📞 اتصال
 </a>
 
-
 <a class="btn whatsapp"
 href="https://wa.me/9647811141207"
 target="_blank">
-
 💬 واتساب
-
 </a>
+
+<button class="btn booking" onclick="openBooking()">
+📅 طلب موعد
+</button>
 
 </div>
 
@@ -389,8 +416,7 @@ target="_blank">
 
 <div class="search">
 
-<input
-type="text"
+<input type="text"
 id="search"
 placeholder="🔍 ابحث عن منتج..."
 onkeyup="searchProducts()">
@@ -407,18 +433,8 @@ onclick="filterCategory('all',this)">
 </button>
 
 <button class="category"
-onclick="filterCategory('cats',this)">
-🐱 القطط
-</button>
-
-<button class="category"
-onclick="filterCategory('dogs',this)">
-🐶 الكلاب
-</button>
-
-<button class="category"
-onclick="filterCategory('birds',this)">
-🐦 الطيور
+onclick="filterCategory('food',this)">
+🍖 الطعام
 </button>
 
 <button class="category"
@@ -426,223 +442,598 @@ onclick="filterCategory('care',this)">
 🧴 العناية
 </button>
 
+<button class="category"
+onclick="filterCategory('supplies',this)">
+🛍️ المستلزمات
+</button>
+
 </div>
 
 
-
-<h2 class="section-title">
-منتجاتنا
-</h2>
-
+<h2 class="section-title">منتجاتنا</h2>
 
 
 <div class="products">
 
 
-<div class="product" data-category="cats">
+<!-- الطعام -->
 
+<div class="product" data-category="food">
 <div class="product-image">🐱</div>
-
 <div class="product-content">
-
-<h3>طعام القطط الجاف</h3>
-
+<h3>دراي فود للقطط الكبيرة 1 كيلو</h3>
 <div class="price-row">
-
-<span class="price">15,000 د.ع</span>
-
-<button class="add"
-onclick="addToCart('طعام القطط الجاف',15000)">
-+
-</button>
-
+<span class="price">5,000 د.ع</span>
+<button class="add" onclick="addToCart('دراي فود للقطط الكبيرة 1 كيلو',5000)">+</button>
+</div>
+</div>
 </div>
 
-</div>
-
-</div>
-
-
-
-<div class="product" data-category="dogs">
-
-<div class="product-image">🐶</div>
-
+<div class="product" data-category="food">
+<div class="product-image">🐱</div>
 <div class="product-content">
-
-<h3>طعام الكلاب</h3>
-
+<h3>دراي فود للقطط الصغيرة 1 كيلو</h3>
 <div class="price-row">
-
-<span class="price">20,000 د.ع</span>
-
-<button class="add"
-onclick="addToCart('طعام الكلاب',20000)">
-+
-</button>
-
+<span class="price">5,000 د.ع</span>
+<button class="add" onclick="addToCart('دراي فود للقطط الصغيرة 1 كيلو',5000)">+</button>
+</div>
+</div>
 </div>
 
-</div>
-
-</div>
-
-
-
-<div class="product" data-category="cats">
-
-<div class="product-image">💊</div>
-
+<div class="product" data-category="food">
+<div class="product-image">🐟</div>
 <div class="product-content">
-
-<h3>علاج البراغيث للقطط</h3>
-
+<h3>مغلف Enjoy سمك</h3>
 <div class="price-row">
-
-<span class="price">12,000 د.ع</span>
-
-<button class="add"
-onclick="addToCart('علاج البراغيث للقطط',12000)">
-+
-</button>
-
+<span class="price">1,000 د.ع</span>
+<button class="add" onclick="addToCart('مغلف Enjoy سمك',1000)">+</button>
+</div>
+</div>
 </div>
 
-</div>
-
-</div>
-
-
-
-<div class="product" data-category="dogs">
-
-<div class="product-image">🩺</div>
-
+<div class="product" data-category="food">
+<div class="product-image">🐱</div>
 <div class="product-content">
-
-<h3>مكملات للكلاب</h3>
-
+<h3>مغلف My Love</h3>
 <div class="price-row">
-
-<span class="price">18,000 د.ع</span>
-
-<button class="add"
-onclick="addToCart('مكملات للكلاب',18000)">
-+
-</button>
-
+<span class="price">1,000 د.ع</span>
+<button class="add" onclick="addToCart('مغلف My Love',1000)">+</button>
+</div>
+</div>
 </div>
 
+<div class="product" data-category="food">
+<div class="product-image">🍗</div>
+<div class="product-content">
+<h3>مغلف Enjoy دجاج</h3>
+<div class="price-row">
+<span class="price">1,000 د.ع</span>
+<button class="add" onclick="addToCart('مغلف Enjoy دجاج',1000)">+</button>
+</div>
+</div>
 </div>
 
+<div class="product" data-category="food">
+<div class="product-image">🍗</div>
+<div class="product-content">
+<h3>مغلف Mewmart دجاج</h3>
+<div class="price-row">
+<span class="price">1,500 د.ع</span>
+<button class="add" onclick="addToCart('مغلف Mewmart دجاج',1500)">+</button>
+</div>
+</div>
 </div>
 
+<div class="product" data-category="food">
+<div class="product-image">🥩</div>
+<div class="product-content">
+<h3>مغلف Mewmart لحم</h3>
+<div class="price-row">
+<span class="price">1,500 د.ع</span>
+<button class="add" onclick="addToCart('مغلف Mewmart لحم',1500)">+</button>
+</div>
+</div>
+</div>
 
+<div class="product" data-category="food">
+<div class="product-image">🥫</div>
+<div class="product-content">
+<h3>معلبات دولمة بالدجاج</h3>
+<div class="price-row">
+<span class="price">2,000 د.ع</span>
+<button class="add" onclick="addToCart('معلبات دولمة بالدجاج',2000)">+</button>
+</div>
+</div>
+</div>
 
-<div class="product" data-category="birds">
+<div class="product" data-category="food">
+<div class="product-image">🥫</div>
+<div class="product-content">
+<h3>معلبات Petron بالدجاج</h3>
+<div class="price-row">
+<span class="price">2,000 د.ع</span>
+<button class="add" onclick="addToCart('معلبات Petron بالدجاج',2000)">+</button>
+</div>
+</div>
+</div>
 
+<div class="product" data-category="food">
+<div class="product-image">🥫</div>
+<div class="product-content">
+<h3>معلبات BR KING</h3>
+<div class="price-row">
+<span class="price">2,000 د.ع</span>
+<button class="add" onclick="addToCart('معلبات BR KING',2000)">+</button>
+</div>
+</div>
+</div>
+
+<div class="product" data-category="food">
+<div class="product-image">🥫</div>
+<div class="product-content">
+<h3>معلبات Tasty</h3>
+<div class="price-row">
+<span class="price">2,000 د.ع</span>
+<button class="add" onclick="addToCart('معلبات Tasty',2000)">+</button>
+</div>
+</div>
+</div>
+
+<div class="product" data-category="food">
+<div class="product-image">🍖</div>
+<div class="product-content">
+<h3>سناكات 5 قطع</h3>
+<div class="price-row">
+<span class="price">1,000 د.ع</span>
+<button class="add" onclick="addToCart('سناكات 5 قطع',1000)">+</button>
+</div>
+</div>
+</div>
+
+<div class="product" data-category="food">
+<div class="product-image">🍖</div>
+<div class="product-content">
+<h3>سناك مغلف قبق 90 غم</h3>
+<div class="price-row">
+<span class="price">1,000 د.ع</span>
+<button class="add" onclick="addToCart('سناك مغلف قبق 90 غم',1000)">+</button>
+</div>
+</div>
+</div>
+
+<div class="product" data-category="food">
+<div class="product-image">🌭</div>
+<div class="product-content">
+<h3>صوصج قطط</h3>
+<div class="price-row">
+<span class="price">4,000 د.ع</span>
+<button class="add" onclick="addToCart('صوصج قطط',4000)">+</button>
+</div>
+</div>
+</div>
+
+<div class="product" data-category="food">
+<div class="product-image">🥛</div>
+<div class="product-content">
+<h3>حليب قطط 10 غم</h3>
+<div class="price-row">
+<span class="price">1,000 د.ع</span>
+<button class="add" onclick="addToCart('حليب قطط 10 غم',1000)">+</button>
+</div>
+</div>
+</div>
+
+<div class="product" data-category="food">
 <div class="product-image">🐦</div>
-
 <div class="product-content">
-
-<h3>طعام الطيور</h3>
-
+<h3>خلطة طعام ببغاء</h3>
 <div class="price-row">
-
-<span class="price">8,000 د.ع</span>
-
-<button class="add"
-onclick="addToCart('طعام الطيور',8000)">
-+
-</button>
-
+<span class="price">2,000 د.ع</span>
+<button class="add" onclick="addToCart('خلطة طعام ببغاء',2000)">+</button>
 </div>
-
 </div>
-
 </div>
 
 
+<!-- العناية -->
 
 <div class="product" data-category="care">
-
 <div class="product-image">🧴</div>
-
 <div class="product-content">
-
-<h3>شامبو للحيوانات</h3>
-
+<h3>شامبو قطط</h3>
 <div class="price-row">
+<span class="price">6,000 د.ع</span>
+<button class="add" onclick="addToCart('شامبو قطط',6000)">+</button>
+</div>
+</div>
+</div>
 
-<span class="price">10,000 د.ع</span>
+<div class="product" data-category="care">
+<div class="product-image">✨</div>
+<div class="product-content">
+<h3>بودرة للقطط</h3>
+<div class="price-row">
+<span class="price">6,000 د.ع</span>
+<button class="add" onclick="addToCart('بودرة للقطط',6000)">+</button>
+</div>
+</div>
+</div>
 
-<button class="add"
-onclick="addToCart('شامبو للحيوانات',10000)">
-+
-</button>
+<div class="product" data-category="care">
+<div class="product-image">🌸</div>
+<div class="product-content">
+<h3>معطر رمل لتر بوكس</h3>
+<div class="price-row">
+<span class="price">1,000 د.ع</span>
+<button class="add" onclick="addToCart('معطر رمل لتر بوكس',1000)">+</button>
+</div>
+</div>
+</div>
+
+<div class="product" data-category="care">
+<div class="product-image">🧹</div>
+<div class="product-content">
+<h3>رولة إزالة الشعر</h3>
+<div class="price-row">
+<span class="price">5,000 د.ع</span>
+<button class="add" onclick="addToCart('رولة إزالة الشعر',5000)">+</button>
+</div>
+</div>
+</div>
+
+<div class="product" data-category="care">
+<div class="product-image">🪮</div>
+<div class="product-content">
+<h3>مشط ضاغط كبير</h3>
+<div class="price-row">
+<span class="price">5,000 د.ع</span>
+<button class="add" onclick="addToCart('مشط ضاغط كبير',5000)">+</button>
+</div>
+</div>
+</div>
+
+<div class="product" data-category="care">
+<div class="product-image">🪮</div>
+<div class="product-content">
+<h3>مشط ضاغط صغير</h3>
+<div class="price-row">
+<span class="price">5,000 د.ع</span>
+<button class="add" onclick="addToCart('مشط ضاغط صغير',5000)">+</button>
+</div>
+</div>
+</div>
+
+<div class="product" data-category="care">
+<div class="product-image">🦷</div>
+<div class="product-content">
+<h3>معجون أسنان وفرشاة قطط وكلاب</h3>
+<div class="price-row">
+<span class="price">5,000 د.ع</span>
+<button class="add" onclick="addToCart('معجون أسنان وفرشاة قطط وكلاب',5000)">+</button>
+</div>
+</div>
+</div>
+
+<div class="product" data-category="care">
+<div class="product-image">✂️</div>
+<div class="product-content">
+<h3>مقراضة أظافر</h3>
+<div class="price-row">
+<span class="price">4,000 د.ع</span>
+<button class="add" onclick="addToCart('مقراضة أظافر',4000)">+</button>
+</div>
+</div>
+</div>
+
+
+<!-- المستلزمات -->
+
+<div class="product" data-category="supplies">
+<div class="product-image">🥣</div>
+<div class="product-content">
+<h3>معلف للقطط</h3>
+<div class="price-row">
+<span class="price">6,000 د.ع</span>
+<button class="add" onclick="addToCart('معلف للقطط',6000)">+</button>
+</div>
+</div>
+</div>
+
+<div class="product" data-category="supplies">
+<div class="product-image">📦</div>
+<div class="product-content">
+<h3>لتر بوكس</h3>
+<div class="price-row">
+<span class="price">8,000 د.ع</span>
+<button class="add" onclick="addToCart('لتر بوكس',8000)">+</button>
+</div>
+</div>
+</div>
+
+<div class="product" data-category="supplies">
+<div class="product-image">🐦</div>
+<div class="product-content">
+<h3>قفص طيور صغير</h3>
+<div class="price-row">
+<span class="price">8,000 د.ع</span>
+<button class="add" onclick="addToCart('قفص طيور صغير',8000)">+</button>
+</div>
+</div>
+</div>
+
+<div class="product" data-category="supplies">
+<div class="product-image">🐦</div>
+<div class="product-content">
+<h3>قفص طيور كبير</h3>
+<div class="price-row">
+<span class="price">12,000 د.ع</span>
+<button class="add" onclick="addToCart('قفص طيور كبير',12000)">+</button>
+</div>
+</div>
+</div>
+
+<div class="product" data-category="supplies">
+<div class="product-image">👜</div>
+<div class="product-content">
+<h3>صندوق نقل قطط</h3>
+<div class="price-row">
+<span class="price">12,000 د.ع</span>
+<button class="add" onclick="addToCart('صندوق نقل قطط',12000)">+</button>
+</div>
+</div>
+</div>
+
+<div class="product" data-category="supplies">
+<div class="product-image">🧹</div>
+<div class="product-content">
+<h3>مجرفة لتر بوكس</h3>
+<div class="price-row">
+<span class="price">3,000 د.ع</span>
+<button class="add" onclick="addToCart('مجرفة لتر بوكس',3000)">+</button>
+</div>
+</div>
+</div>
+
+<div class="product" data-category="supplies">
+<div class="product-image">🍼</div>
+<div class="product-content">
+<h3>رضاعة قطط وكلاب</h3>
+<div class="price-row">
+<span class="price">5,000 د.ع</span>
+<button class="add" onclick="addToCart('رضاعة قطط وكلاب',5000)">+</button>
+</div>
+</div>
+</div>
+
+<div class="product" data-category="supplies">
+<div class="product-image">🎀</div>
+<div class="product-content">
+<h3>قلادة قطط</h3>
+<div class="price-row">
+<span class="price">4,000 د.ع</span>
+<button class="add" onclick="addToCart('قلادة قطط',4000)">+</button>
+</div>
+</div>
+</div>
+
+<div class="product" data-category="supplies">
+<div class="product-image">🪶</div>
+<div class="product-content">
+<h3>مرجوحة طيور</h3>
+<div class="price-row">
+<span class="price">4,000 د.ع</span>
+<button class="add" onclick="addToCart('مرجوحة طيور',4000)">+</button>
+</div>
+</div>
+</div>
+
 
 </div>
 
-</div>
 
-</div>
+<!-- زر السلة -->
 
-
-</div>
-
-
-
-<button class="cart-button"
-onclick="openCart()">
-
+<button class="cart-button" onclick="openCart()">
 🛒 السلة
-
-<span class="cart-count"
-id="cartCount">
-0
-</span>
-
+<span class="cart-count" id="cartCount">0</span>
 </button>
 
 
+<!-- نافذة السلة -->
 
-<div class="cart-modal"
-id="cartModal">
+<div class="modal" id="cartModal">
 
-<div class="cart-box">
+<div class="modal-box">
 
-<button class="close"
-onclick="closeCart()">
-✕
-</button>
-
+<button class="close" onclick="closeCart()">✕</button>
 
 <h2>🛒 سلة المشتريات</h2>
 
-
 <div id="cartItems"></div>
 
-
 <div class="total">
+المجموع: <span id="total">0</span> د.ع
+</div>
 
-المجموع:
+<button class="order-btn" onclick="sendOrder()">
+📲 إرسال الطلب عبر واتساب
+</button>
 
-<span id="total">
-0
-</span>
-
-د.ع
+</div>
 
 </div>
 
 
-<a href="#"
-class="order"
-onclick="sendWhatsApp()">
 
-إرسال الطلب عبر واتساب
+<!-- نافذة الحجز -->
 
-</a>
+<div class="modal" id="bookingModal">
+
+<div class="modal-box">
+
+<button class="close" onclick="closeBooking()">✕</button>
+
+<h2>📅 طلب موعد</h2>
+
+
+<div class="form-group">
+
+<label>اسم صاحب الحيوان</label>
+
+<input type="text" id="ownerName"
+placeholder="اكتب الاسم">
+
+</div>
+
+
+<div class="form-group">
+
+<label>رقم الهاتف</label>
+
+<input type="tel" id="phone"
+placeholder="07XXXXXXXXX">
+
+</div>
+
+
+<div class="form-group">
+
+<label>اسم الحيوان</label>
+
+<input type="text" id="petName"
+placeholder="مثلاً لولو">
+
+</div>
+
+
+<div class="form-group">
+
+<label>نوع الحيوان</label>
+
+<select id="petType">
+
+<option value="">اختر النوع</option>
+
+<option>قط</option>
+<option>كلب</option>
+<option>طائر</option>
+<option>أخرى</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>الخدمة المطلوبة</label>
+
+<select id="service" onchange="updateService()">
+
+<option value="">اختر الخدمة</option>
+
+<option value="فحص سريري شامل|10000">
+فحص سريري شامل — 10,000 د.ع
+</option>
+
+<option value="تحليل USG و TP|10000">
+تحليل USG و TP — 10,000 د.ع
+</option>
+
+<option value="جرعة ديدان|5000">
+جرعة ديدان — 5,000 د.ع
+</option>
+
+<option value="لقاح القطط|25000">
+لقاح القطط — 25,000 د.ع
+</option>
+
+<option value="لقاح الكلاب|25000">
+لقاح الكلاب — 25,000 د.ع
+</option>
+
+<option value="تعقيم قط ذكر|75000">
+تعقيم قط ذكر — 75,000 د.ع
+</option>
+
+<option value="تعقيم قطة أنثى|100000">
+تعقيم قطة أنثى — 100,000 د.ع
+</option>
+
+<option value="حلاقة|20000">
+حلاقة — 20,000 د.ع
+</option>
+
+<option value="غسل|15000">
+غسل — 15,000 د.ع
+</option>
+
+<option value="حالة مرضية|0">
+🩺 حالة مرضية / كشف مرضي
+</option>
+
+</select>
+
+</div>
+
+
+<div class="price-display" id="servicePrice">
+اختر الخدمة لمعرفة السعر
+</div>
+
+
+<div class="form-group" id="symptomsBox" style="display:none">
+
+<label>اشرح الحالة أو الأعراض</label>
+
+<textarea id="symptoms"
+placeholder="اكتب الأعراض ومتى بدأت..."></textarea>
+
+</div>
+
+
+<div class="form-group">
+
+<label>التاريخ المطلوب</label>
+
+<input type="date" id="bookingDate">
+
+</div>
+
+
+<div class="form-group">
+
+<label>الوقت المطلوب</label>
+
+<select id="bookingTime">
+
+<option value="">اختر الوقت</option>
+
+<option>10:00 صباحاً</option>
+<option>12:00 ظهراً</option>
+<option>2:00 ظهراً</option>
+<option>4:00 عصراً</option>
+<option>6:00 مساءً</option>
+<option>8:00 مساءً</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>ملاحظات إضافية</label>
+
+<textarea id="notes"
+placeholder="أي ملاحظات إضافية..."></textarea>
+
+</div>
+
+
+<button class="submit-booking" onclick="sendBooking()">
+📲 إرسال طلب الموعد عبر واتساب
+</button>
 
 
 </div>
@@ -659,8 +1050,6 @@ onclick="sendWhatsApp()">
 📍 النجف الأشرف – شارع عسكري مدارس – مقابل مضخة مياه العسكري
 </p>
 
-<br>
-
 <p>
 📞 07811141207
 </p>
@@ -671,31 +1060,23 @@ onclick="sendWhatsApp()">
 
 <script>
 
-
 let cart=[];
 
 
+/* السلة */
+
 function addToCart(name,price){
 
-let item=
-cart.find(x=>x.name===name);
+let item=cart.find(x=>x.name===name);
 
 if(item){
-
 item.quantity++;
-
 }else{
-
 cart.push({
-
 name:name,
-
 price:price,
-
 quantity:1
-
 });
-
 }
 
 updateCart();
@@ -703,25 +1084,17 @@ updateCart();
 }
 
 
-
 function updateCart(){
 
 let count=0;
-
 let total=0;
 
-
 cart.forEach(item=>{
-
 count+=item.quantity;
-
 total+=item.price*item.quantity;
-
 });
 
-
 document.getElementById("cartCount").innerText=count;
-
 
 document.getElementById("total").innerText=
 total.toLocaleString();
@@ -729,53 +1102,32 @@ total.toLocaleString();
 }
 
 
-
 function openCart(){
 
-let container=
-document.getElementById("cartItems");
-
+let container=document.getElementById("cartItems");
 
 container.innerHTML="";
 
-
 if(cart.length===0){
 
-container.innerHTML=
-"<p>السلة فارغة حالياً</p>";
+container.innerHTML="<p>السلة فارغة حالياً</p>";
 
 }
-
 
 cart.forEach(item=>{
 
 container.innerHTML+=`
-
 <div class="cart-item">
-
-<div>
-
-${item.name} × ${item.quantity}
-
+<div>${item.name} × ${item.quantity}</div>
+<div>${(item.price*item.quantity).toLocaleString()} د.ع</div>
 </div>
-
-<div>
-
-${(item.price*item.quantity).toLocaleString()} د.ع
-
-</div>
-
-</div>
-
 `;
 
 });
 
-
 document.getElementById("cartModal").style.display="block";
 
 }
-
 
 
 function closeCart(){
@@ -785,56 +1137,245 @@ document.getElementById("cartModal").style.display="none";
 }
 
 
-
-function sendWhatsApp(){
+function sendOrder(){
 
 if(cart.length===0){
-
 alert("السلة فارغة");
-
-return false;
-
+return;
 }
 
-
 let message=
-"مرحباً، أريد طلب المنتجات التالية من نبض للرعاية البيطرية:\\n\\n";
-
+"🛒 طلب منتجات جديد - نبض للرعاية البيطرية\n\n";
 
 let total=0;
-
 
 cart.forEach(item=>{
 
 message+=
-
-"- "+item.name+
-
+"• "+item.name+
 " × "+item.quantity+
-
 " = "+(item.price*item.quantity).toLocaleString()+
-
-" د.ع\\n";
-
+" د.ع\n";
 
 total+=item.price*item.quantity;
 
 });
 
+message+="\n💰 المجموع: "+total.toLocaleString()+" د.ع";
 
-message+=
+window.open(
+"https://wa.me/9647811141207?text="+
+encodeURIComponent(message),
+"_blank"
+);
 
-"\\nالمجموع الكلي: "+
+}
 
-total.toLocaleString()+
 
+/* البحث */
+
+function searchProducts(){
+
+let input=document.getElementById("search")
+.value.toLowerCase();
+
+document.querySelectorAll(".product")
+.forEach(product=>{
+
+let text=product.innerText.toLowerCase();
+
+product.style.display=
+text.includes(input)
+?
+"block"
+:
+"none";
+
+});
+
+}
+
+
+/* الأقسام */
+
+function filterCategory(category,button){
+
+document.querySelectorAll(".category")
+.forEach(btn=>btn.classList.remove("active"));
+
+button.classList.add("active");
+
+document.querySelectorAll(".product")
+.forEach(product=>{
+
+if(category==="all" ||
+product.dataset.category===category){
+
+product.style.display="block";
+
+}else{
+
+product.style.display="none";
+
+}
+
+});
+
+}
+
+
+/* الحجز */
+
+function openBooking(){
+
+document.getElementById("bookingModal")
+.style.display="block";
+
+}
+
+
+function closeBooking(){
+
+document.getElementById("bookingModal")
+.style.display="none";
+
+}
+
+
+function updateService(){
+
+let service=document.getElementById("service").value;
+
+let priceBox=document.getElementById("servicePrice");
+
+let symptomsBox=document.getElementById("symptomsBox");
+
+
+if(!service){
+
+priceBox.innerText="اختر الخدمة لمعرفة السعر";
+
+symptomsBox.style.display="none";
+
+return;
+
+}
+
+
+let parts=service.split("|");
+
+let name=parts[0];
+
+let price=Number(parts[1]);
+
+
+if(name==="حالة مرضية"){
+
+priceBox.innerText=
+"💬 السعر يحدد حسب الحالة والمعاينة";
+
+symptomsBox.style.display="block";
+
+}else{
+
+priceBox.innerText=
+"💰 السعر: "+
+price.toLocaleString()+
 " د.ع";
+
+symptomsBox.style.display="none";
+
+}
+
+}
+
+
+function sendBooking(){
+
+let owner=document.getElementById("ownerName").value;
+
+let phone=document.getElementById("phone").value;
+
+let petName=document.getElementById("petName").value;
+
+let petType=document.getElementById("petType").value;
+
+let service=document.getElementById("service").value;
+
+let date=document.getElementById("bookingDate").value;
+
+let time=document.getElementById("bookingTime").value;
+
+let symptoms=document.getElementById("symptoms").value;
+
+let notes=document.getElementById("notes").value;
+
+
+if(!owner || !phone || !petName ||
+!petType || !service || !date || !time){
+
+alert("يرجى ملء جميع المعلومات المطلوبة");
+
+return;
+
+}
+
+
+let parts=service.split("|");
+
+let serviceName=parts[0];
+
+let price=Number(parts[1]);
+
+
+let message=
+"📅 طلب موعد جديد\n";
+message+="نبض للرعاية البيطرية\n\n";
+
+message+="👤 اسم صاحب الحيوان: "+owner+"\n";
+
+message+="📞 الهاتف: "+phone+"\n";
+
+message+="🐾 اسم الحيوان: "+petName+"\n";
+
+message+="🐶 نوع الحيوان: "+petType+"\n";
+
+message+="🩺 الخدمة: "+serviceName+"\n";
+
+
+if(serviceName==="حالة مرضية"){
+
+message+="💬 السعر: يحدد حسب الحالة\n";
+
+message+="📝 الأعراض: "+symptoms+"\n";
+
+}else{
+
+message+="💰 السعر: "+
+price.toLocaleString()+
+" د.ع\n";
+
+}
+
+
+message+="📅 التاريخ المطلوب: "+date+"\n";
+
+message+="⏰ الوقت المطلوب: "+time+"\n";
+
+
+if(notes){
+
+message+="📝 ملاحظات: "+notes+"\n";
+
+}
+
+
+message+="\n⚠️ هذا طلب موعد ويحتاج إلى تأكيد من العيادة.";
 
 
 window.open(
 
 "https://wa.me/9647811141207?text="+
-
 encodeURIComponent(message),
 
 "_blank"
@@ -843,86 +1384,8 @@ encodeURIComponent(message),
 
 }
 
-
-
-function filterCategory(category,button){
-
-document.querySelectorAll(".category")
-
-.forEach(btn=>btn.classList.remove("active"));
-
-
-button.classList.add("active");
-
-
-document.querySelectorAll(".product")
-
-.forEach(product=>{
-
-
-if(category==="all" ||
-
-product.dataset.category===category){
-
-
-product.style.display="block";
-
-
-}else{
-
-
-product.style.display="none";
-
-
-}
-
-
-});
-
-}
-
-
-
-function searchProducts(){
-
-let input=
-
-document.getElementById("search")
-
-.value.toLowerCase();
-
-
-document.querySelectorAll(".product")
-
-.forEach(product=>{
-
-
-let text=
-
-product.innerText.toLowerCase();
-
-
-product.style.display=
-
-text.includes(input)
-
-?
-
-"block"
-
-:
-
-"none";
-
-
-});
-
-}
-
-
 </script>
 
 
 </body>
-
 </html>
