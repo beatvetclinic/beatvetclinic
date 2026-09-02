@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>نبض للرعاية البيطرية</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:Tahoma, Arial, sans-serif;
+}
+
+body{
+  background:#f7f7f5;
+  color:#252525;
+}
+
+header{
+  background:linear-gradient(135deg,#94c11e,#638c0d);
+  color:white;
+  padding:25px 20px 30px;
+  border-radius:0 0 35px 35px;
+  text-align:center;
+}
+
+.logo{
+  width:85px;
+  height:85px;
+  background:white;
+  border-radius:50%;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:42px;
+  box-shadow:0 5px 15px rgba(0,0,0,.2);
+}
+
+header h1{
+  margin-top:15px;
+  font-size:26px;
+}
+
+header p{
+  margin-top:8px;
+  font-size:15px;
+}
+
+.info{
+  background:white;
+  margin:-10px 15px 20px;
+  border-radius:20px;
+  padding:18px;
+  box-shadow:0 5px 20px rgba(0,0,0,.08);
+  text-align:center;
+}
+
+.info p{
+  margin:8px;
+  color:#555;
+}
+
+.buttons{
+  display:flex;
+  gap:10px;
+  margin-top:15px;
+}
+
+.btn{
+  flex:1;
+  padding:13px;
+  border-radius:12px;
+  text-decoration:none;
+  color:white;
+  font-weight:bold;
+  text-align:center;
+}
+
+.call{
+  background:#333;
+}
+
+.whatsapp{
+  background:#25D366;
+}
+
+.search{
+  padding:0 15px;
+  margin:20px 0;
+}
+
+.search input{
+  width:100%;
+  padding:15px;
+  border-radius:15px;
+  border:1px solid #ddd;
+  font-size:16px;
+  outline:none;
+}
+
+.categories{
+  display:flex;
+  overflow-x:auto;
+  gap:10px;
+  padding:5px 15px 15px;
+}
+
+.category{
+  white-space:nowrap;
+  background:white;
+  border:1px solid #ddd;
+  border-radius:30px;
+  padding:12px 18px;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+.category.active{
+  background:#94c11e;
+  color:white;
+  border-color:#94c11e;
+}
+
+.section-title{
+  padding:10px 20px 20px;
+  font-size:25px;
+  color:#638c0d;
+}
+
+.products{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:15px;
+  padding:0 15px 100px;
+}
+
+.product{
+  background:white;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.product-image{
+  height:150px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:70px;
+  background:linear-gradient(135deg,#eaf4d2,#f7f7f7);
+}
+
+.product-content{
+  padding:12px;
+}
+
+.product h3{
+  font-size:16px;
+  min-height:45px;
+  line-height:1.5;
+}
+
+.price-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-top:10px;
+}
+
+.price{
+  color:#b51d20;
+  font-size:18px;
+  font-weight:bold;
+}
+
+.add{
+  width:42px;
+  height:42px;
+  border:none;
+  border-radius:50%;
+  background:#94c11e;
+  color:white;
+  font-size:27px;
+  cursor:pointer;
+}
+
+.cart-button{
+  position:fixed;
+  bottom:20px;
+  left:20px;
+  background:#b51d20;
+  color:white;
+  border:none;
+  border-radius:50px;
+  padding:15px 22px;
+  font-size:17px;
+  font-weight:bold;
+  box-shadow:0 5px 20px rgba(0,0,0,.25);
+  cursor:pointer;
+}
+
+.cart-count{
+  background:white;
+  color:#b51d20;
+  border-radius:50%;
+  padding:3px 8px;
+  margin-right:5px;
+}
+
+.cart-modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.5);
+  z-index:100;
+}
+
+.cart-box{
+  position:absolute;
+  bottom:0;
+  width:100%;
+  background:white;
+  border-radius:30px 30px 0 0;
+  padding:25px;
+  max-height:75vh;
+  overflow:auto;
+}
+
+.cart-box h2{
+  margin-bottom:20px;
+}
+
+.cart-item{
+  display:flex;
+  justify-content:space-between;
+  padding:12px 0;
+  border-bottom:1px solid #eee;
+}
+
+.total{
+  font-size:20px;
+  font-weight:bold;
+  margin:20px 0;
+}
+
+.order{
+  display:block;
+  background:#25D366;
+  color:white;
+  text-align:center;
+  padding:16px;
+  border-radius:15px;
+  text-decoration:none;
+  font-size:18px;
+  font-weight:bold;
+}
+
+.close{
+  float:left;
+  border:none;
+  background:#eee;
+  padding:8px 12px;
+  border-radius:10px;
+  cursor:pointer;
+}
+
+footer{
+  text-align:center;
+  padding:25px 15px;
+  color:#777;
+  background:white;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">🐾</div>
+
+  <h1>نبض للرعاية البيطرية</h1>
+
+  <p>كل ما يحتاجه حيوانك الأليف في مكان واحد</p>
+</header>
+
+<div class="info">
+
+  <p>📍 النجف الأشرف – شارع عسكري مدارس – مقابل مضخة مياه العسكري</p>
+
+  <p>📞 07811141207</p>
+
+  <div class="buttons">
+
+    <a class="btn call" href="tel:07811141207">
+      اتصال
+    </a>
+
+    <a class="btn whatsapp"
+       href="https://wa.me/9647811141207"
+       target="_blank">
+      واتساب
+    </a>
+
+  </div>
+
+</div>
+
+<div class="search">
+  <input type="text"
+         id="search"
+         placeholder="🔍 ابحث عن منتج..."
+         onkeyup="searchProducts()">
+</div>
+
+<div class="categories">
+
+  <button class="category active" onclick="filterCategory('all',this)">
+    الكل
+  </button>
+
+  <button class="category" onclick="filterCategory('cats',this)">
+    🐱 القطط
+  </button>
+
+  <button class="category" onclick="filterCategory('dogs',this)">
+    🐶 الكلاب
+  </button>
+
+  <button class="category" onclick="filterCategory('birds',this)">
+    🐦 الطيور
+  </button>
+
+  <button class="category" onclick="filterCategory('care',this)">
+    🧴 العناية
+  </button>
+
+</div>
+
+<h2 class="section-title">منتجاتنا</h2>
+
+<div class="products" id="products">
+
+  <div class="product" data-category="cats">
+    <div class="product-image">🐱</div>
+
+    <div class="product-content">
+
+      <h3>طعام القطط الجاف</h3>
+
+      <div class="price-row">
+        <span class="price">15,000 د.ع</span>
+
+        <button class="add"
+        onclick="addToCart('طعام القطط الجاف',15000)">
+        +
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="product" data-category="dogs">
+    <div class="product-image">🐶</div>
+
+    <div class="product-content">
+
+      <h3>طعام الكلاب</h3>
+
+      <div class="price-row">
+        <span class="price">20,000 د.ع</span>
+
+        <button class="add"
+        onclick="addToCart('طعام الكلاب',20000)">
+        +
+        </button>
+
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="product" data-category="cats">
+    <div class="product-image">🩺</div>
+
+    <div class="product-content">
+
+      <h3>علاج البراغيث للقطط</h3>
+
+      <div class="price-row">
+        <span class="price">12,000 د.ع</span>
+
+        <button class="add"
+        onclick="addToCart('علاج البراغيث للقطط',12000)">
+        +
+        </button>
+
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="product" data-category="dogs">
+    <div class="product-image">💊</div>
+
+    <div class="product-content">
+
+      <h3>مكملات للكلاب</h3>
+
+      <div class="price-row">
+        <span class="price">18,000 د.ع</span>
+
+        <button class="add"
+        onclick="addToCart('مكملات للكلاب',18000)">
+        +
+        </button>
+
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="product" data-category="birds">
+    <div class="product-image">🐦</div>
+
+    <div class="product-content">
+
+      <h3>طعام الطيور</h3>
+
+      <div class="price-row">
+        <span class="price">8,000 د.ع</span>
+
+        <button class="add"
+        onclick="addToCart('طعام الطيور',8000)">
+        +
+        </button>
+
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="product" data-category="care">
+    <div class="product-image">🧴</div>
+
+    <div class="product-content">
+
+      <h3>شامبو للحيوانات</h3>
+
+      <div class="price-row">
+        <span class="price">10,000 د.ع</span>
+
+        <button class="add"
+        onclick="addToCart('شامبو للحيوانات',10000)">
+        +
+        </button>
+
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+
+<button class="cart-button" onclick="openCart()">
+
+  🛒 السلة
+
+  <span class="cart-count" id="cartCount">0</span>
+
+</button>
+
+
+<div class="cart-modal" id="cartModal">
+
+  <div class="cart-box">
+
+    <button class="close" onclick="closeCart()">✕</button>
+
+    <h2>🛒 سلة المشتريات</h2>
+
+    <div id="cartItems"></div>
+
+    <div class="total">
+      المجموع:
+      <span id="total">0</span> د.ع
+    </div>
+
+    <a href="#"
+       class="order"
+       onclick="sendWhatsApp()">
+
+       إرسال الطلب عبر واتساب
+
+    </a>
+
+  </div>
+
+</div>
+
+
+<footer>
+
+  🐾 نبض للرعاية البيطرية
+
+  <br><br>
+
+  النجف الأشرف – شارع عسكري مدارس – مقابل مضخة مياه العسكري
+
+</footer>
+
+
+<script>
+
+let cart = [];
+
+
+function addToCart(name,price){
+
+  let item = cart.find(x => x.name === name);
+
+  if(item){
+    item.quantity++;
+  }else{
+    cart.push({
+      name:name,
+      price:price,
+      quantity:1
+    });
+  }
+
+  updateCart();
+
+}
+
+
+function updateCart(){
+
+  let count = 0;
+
+  let total = 0;
+
+  cart.forEach(item => {
+
+    count += item.quantity;
+
+    total += item.price * item.quantity;
+
+  });
+
+  document.getElementById("cartCount").innerText = count;
+
+  document.getElementById("total").innerText =
+  total.toLocaleString();
+
+}
+
+
+function openCart(){
+
+  let container =
+  document.getElementById("cartItems");
+
+  container.innerHTML = "";
+
+  if(cart.length === 0){
+
+    container.innerHTML =
+    "<p>السلة فارغة حالياً</p>";
+
+  }
+
+  cart.forEach((item,index)=>{
+
+    container.innerHTML += `
+
+    <div class="cart-item">
+
+      <div>
+        ${item.name}
+        × ${item.quantity}
+      </div>
+
+      <div>
+        ${(item.price * item.quantity).toLocaleString()}
+        د.ع
+      </div>
+
+    </div>
+
+    `;
+
+  });
+
+  document.getElementById("cartModal").style.display =
+  "block";
+
+}
+
+
+function closeCart(){
+
+  document.getElementById("cartModal").style.display =
+  "none";
+
+}
+
+
+function sendWhatsApp(){
+
+  if(cart.length === 0){
+
+    alert("السلة فارغة");
+
+    return false;
+
+  }
+
+  let message =
+  "مرحباً، أريد طلب المنتجات التالية من نبض للرعاية البيطرية:%0A%0A";
+
+  let total = 0;
+
+  cart.forEach(item => {
+
+    message +=
+    "- " +
+    item.name +
+    " × " +
+    item.quantity +
+    " = " +
+    (item.price * item.quantity).toLocaleString() +
+    " د.ع%0A";
+
+    total += item.price * item.quantity;
+
+  });
+
+  message +=
+  "%0Aالمجموع الكلي: " +
+  total.toLocaleString() +
+  " د.ع";
+
+  window.open(
+
+    "https://wa.me/9647811141207?text=" +
+    message,
+
+    "_blank"
+
+  );
+
+}
+
+
+function filterCategory(category,button){
+
+  document.querySelectorAll(".category")
+  .forEach(btn =>
+  btn.classList.remove("active"));
+
+  button.classList.add("active");
+
+  document.querySelectorAll(".product")
+  .forEach(product => {
+
+    if(category === "all" ||
+       product.dataset.category === category){
+
+      product.style.display = "block";
+
+    }else{
+
+      product.style.display = "none";
+
+    }
+
+  });
+
+}
+
+
+function searchProducts(){
+
+  let input =
+  document.getElementById("search")
+  .value
+  .toLowerCase();
+
+  document.querySelectorAll(".product")
+  .forEach(product => {
+
+    let text =
+    product.innerText.toLowerCase();
+
+    product.style.display =
+    text.includes(input)
+    ? "block"
+    : "none";
+
+  });
+
+}
+
+</script>
+
+</body>
+</html>
