@@ -1,584 +1,781 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>نبض للرعاية البيطرية</title>
-
-    <!-- الخط العربي -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap"
-        rel="stylesheet">
-
-    <style>
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Tajawal', Arial, sans-serif;
-            background: #F8F6F1;
-            color: #354744;
-            line-height: 1.7;
-        }
-
-        /* ================= HEADER ================= */
-
-        header {
-            background: #354744;
-            color: white;
-            text-align: center;
-            padding: 45px 20px 80px;
-        }
-
-        .logo {
-            width: 95px;
-            height: 95px;
-            margin: auto;
-            margin-bottom: 18px;
-
-            background: #F2CA98;
-            border-radius: 50%;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            font-size: 45px;
-
-            border: 3px solid white;
-
-            box-shadow: 0 8px 20px rgba(0,0,0,.2);
-        }
-
-        header h1 {
-            font-size: 32px;
-            font-weight: 800;
-            margin-bottom: 5px;
-        }
-
-        header p {
-            color: #F2CA98;
-            font-size: 17px;
-        }
-
-
-        /* ================= INFO ================= */
-
-        .info-box {
-
-            background: white;
-
-            max-width: 850px;
-
-            margin: -45px auto 30px;
-
-            padding: 25px;
-
-            border-radius: 22px;
-
-            text-align: center;
-
-            box-shadow:
-            0 10px 30px rgba(53,71,68,.12);
-
-        }
-
-        .info-box p {
-
-            margin: 8px 0;
-
-            font-size: 16px;
-
-            color: #354744;
-
-        }
-
-
-        /* ================= BUTTONS ================= */
-
-        .buttons {
-
-            display: flex;
-
-            gap: 12px;
-
-            margin-top: 20px;
-
-        }
-
-        .btn {
-
-            flex: 1;
-
-            padding: 15px;
-
-            border-radius: 12px;
-
-            text-decoration: none;
-
-            text-align: center;
-
-            font-size: 17px;
-
-            font-weight: 700;
-
-            transition: .3s;
-
-        }
-
-        .call {
-
-            background: #354744;
-
-            color: white;
-
-        }
-
-        .whatsapp {
-
-            background: #F2CA98;
-
-            color: #354744;
-
-        }
-
-        .btn:hover {
-
-            transform: translateY(-3px);
-
-        }
-
-
-        /* ================= CONTAINER ================= */
-
-        .container {
-
-            max-width: 1100px;
-
-            margin: auto;
-
-            padding: 20px;
-
-        }
-
-
-        /* ================= TITLES ================= */
-
-        .section-title {
-
-            text-align: center;
-
-            font-size: 29px;
-
-            margin: 40px 0 25px;
-
-            color: #354744;
-
-            font-weight: 800;
-
-        }
-
-        .section-title span {
-
-            color: #C99F68;
-
-        }
-
-
-        /* ================= SERVICES ================= */
-
-        .services {
-
-            display: grid;
-
-            grid-template-columns:
-            repeat(auto-fit,minmax(210px,1fr));
-
-            gap: 18px;
-
-        }
-
-        .service {
-
-            background: white;
-
-            padding: 28px 18px;
-
-            text-align: center;
-
-            border-radius: 20px;
-
-            border-bottom:
-            4px solid #F2CA98;
-
-            box-shadow:
-            0 5px 20px rgba(0,0,0,.06);
-
-            transition: .3s;
-
-        }
-
-        .service:hover {
-
-            transform: translateY(-6px);
-
-        }
-
-        .icon {
-
-            width: 68px;
-
-            height: 68px;
-
-            margin: auto;
-
-            margin-bottom: 14px;
-
-            border-radius: 50%;
-
-            background: #354744;
-
-            color: #F2CA98;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            font-size: 30px;
-
-        }
-
-        .service h3 {
-
-            font-size: 20px;
-
-            margin-bottom: 8px;
-
-            color: #354744;
-
-        }
-
-        .service p {
-
-            color: #777;
-
-            font-size: 15px;
-
-        }
-
-
-        /* ================= ABOUT ================= */
-
-        .about {
-
-            background: #354744;
-
-            color: white;
-
-            margin-top: 45px;
-
-            padding: 40px 25px;
-
-            border-radius: 25px;
-
-            text-align: center;
-
-        }
-
-        .about h2 {
-
-            color: #F2CA98;
-
-            margin-bottom: 15px;
-
-            font-size: 28px;
-
-        }
-
-        .about p {
-
-            max-width: 750px;
-
-            margin: auto;
-
-            font-size: 17px;
-
-        }
-
-
-        /* ================= FOOTER ================= */
-
-        footer {
-
-            background: #293936;
-
-            color: white;
-
-            text-align: center;
-
-            padding: 30px 15px;
-
-            margin-top: 45px;
-
-        }
-
-        footer h3 {
-
-            color: #F2CA98;
-
-            margin-bottom: 8px;
-
-            font-size: 21px;
-
-        }
-
-
-        /* ================= MOBILE ================= */
-
-        @media(max-width:600px) {
-
-            header {
-
-                padding:
-                40px 15px 70px;
-
-            }
-
-            header h1 {
-
-                font-size: 26px;
-
-            }
-
-            .info-box {
-
-                margin:
-                -35px 15px 20px;
-
-            }
-
-            .buttons {
-
-                flex-direction: column;
-
-            }
-
-            .section-title {
-
-                font-size: 25px;
-
-            }
-
-        }
-
-    </style>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>نبض للرعاية البيطرية</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:'Tajawal',sans-serif;
+    background:#F8F6F1;
+    color:#354744;
+}
+
+header{
+    background:#354744;
+    color:white;
+    text-align:center;
+    padding:35px 20px 70px;
+}
+
+.logo{
+    width:85px;
+    height:85px;
+    background:#F2CA98;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:auto;
+    margin-bottom:15px;
+    font-size:40px;
+    border:3px solid white;
+}
+
+header h1{
+    font-size:30px;
+    font-weight:800;
+}
+
+header p{
+    color:#F2CA98;
+    margin-top:5px;
+}
+
+.info{
+    background:white;
+    margin:-40px 15px 20px;
+    padding:20px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+}
+
+.info p{
+    margin:8px 0;
+}
+
+.buttons{
+    display:flex;
+    gap:10px;
+    margin-top:15px;
+}
+
+.btn{
+    flex:1;
+    padding:13px;
+    border-radius:12px;
+    text-decoration:none;
+    font-weight:bold;
+    text-align:center;
+}
+
+.call{
+    background:#354744;
+    color:white;
+}
+
+.whatsapp{
+    background:#F2CA98;
+    color:#354744;
+}
+
+.search{
+    padding:0 15px;
+    margin:20px 0;
+}
+
+.search input{
+    width:100%;
+    padding:15px;
+    border-radius:15px;
+    border:1px solid #ddd;
+    font-family:'Tajawal';
+    font-size:16px;
+    outline:none;
+}
+
+.categories{
+    display:flex;
+    gap:10px;
+    overflow-x:auto;
+    padding:5px 15px 20px;
+}
+
+.category{
+    white-space:nowrap;
+    border:1px solid #ddd;
+    background:white;
+    padding:11px 17px;
+    border-radius:25px;
+    font-family:'Tajawal';
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.category.active{
+    background:#354744;
+    color:#F2CA98;
+    border-color:#354744;
+}
+
+.section-title{
+    padding:10px 20px 20px;
+    font-size:25px;
+    font-weight:800;
+}
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+    padding:0 15px 110px;
+}
+
+.product{
+    background:white;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 5px 18px rgba(0,0,0,.07);
+}
+
+.product-image{
+    height:150px;
+    background:#EEEDE7;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:65px;
+}
+
+.product-content{
+    padding:12px;
+}
+
+.product h3{
+    font-size:16px;
+    min-height:50px;
+}
+
+.price-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-top:10px;
+}
+
+.price{
+    font-weight:bold;
+    font-size:16px;
+    color:#354744;
+}
+
+.add{
+    width:42px;
+    height:42px;
+    border:none;
+    border-radius:50%;
+    background:#F2CA98;
+    color:#354744;
+    font-size:25px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.cart-button{
+    position:fixed;
+    bottom:20px;
+    left:20px;
+    border:none;
+    background:#354744;
+    color:white;
+    padding:14px 20px;
+    border-radius:30px;
+    font-family:'Tajawal';
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+    box-shadow:0 5px 20px rgba(0,0,0,.2);
+}
+
+.cart-count{
+    background:#F2CA98;
+    color:#354744;
+    padding:3px 8px;
+    border-radius:50%;
+}
+
+.cart-modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.5);
+    z-index:100;
+}
+
+.cart-box{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    background:white;
+    padding:25px;
+    border-radius:25px 25px 0 0;
+    max-height:75vh;
+    overflow:auto;
+}
+
+.close{
+    float:left;
+    border:none;
+    padding:8px 12px;
+    background:#eee;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+.cart-item{
+    display:flex;
+    justify-content:space-between;
+    padding:12px 0;
+    border-bottom:1px solid #eee;
+}
+
+.total{
+    font-size:20px;
+    font-weight:bold;
+    margin:20px 0;
+}
+
+.order{
+    display:block;
+    background:#F2CA98;
+    color:#354744;
+    text-align:center;
+    padding:16px;
+    border-radius:15px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+footer{
+    background:#354744;
+    color:white;
+    text-align:center;
+    padding:30px 15px;
+}
+
+footer h3{
+    color:#F2CA98;
+    margin-bottom:10px;
+}
+
+@media(max-width:500px){
+
+    header h1{
+        font-size:25px;
+    }
+
+    .buttons{
+        flex-direction:column;
+    }
+
+}
+
+</style>
 </head>
-
 
 <body>
 
-
-<!-- ================= HEADER ================= -->
-
 <header>
 
-    <div class="logo">
-        🐾
-    </div>
+<div class="logo">🐾</div>
 
-    <h1>
-        نبض للرعاية البيطرية
-    </h1>
+<h1>نبض للرعاية البيطرية</h1>
 
-    <p>
-        رعاية متكاملة لصحة حيواناتكم
-    </p>
+<p>كل ما يحتاجه حيوانك الأليف في مكان واحد</p>
 
 </header>
 
 
+<div class="info">
 
-<!-- ================= INFO ================= -->
+<p>📍 النجف الأشرف – شارع عسكري مدارس – مقابل مضخة مياه العسكري</p>
 
-<div class="info-box">
+<p>📞 07811141207</p>
 
-    <p>
-        📍 النجف الأشرف - شارع عسكري مدارس - مقابل مضخة مياه العسكري
-    </p>
+<div class="buttons">
 
-    <p>
-        📞 07811141207
-    </p>
+<a class="btn call" href="tel:07811141207">
+📞 اتصال
+</a>
 
+<a class="btn whatsapp"
+href="https://wa.me/9647811141207"
+target="_blank">
 
-    <div class="buttons">
+💬 واتساب
 
-        <a class="btn call"
-           href="tel:07811141207">
+</a>
 
-            اتصال 📞
-
-        </a>
-
-
-        <a class="btn whatsapp"
-           href="https://wa.me/9647811141207"
-           target="_blank">
-
-            واتساب 💬
-
-        </a>
-
-    </div>
+</div>
 
 </div>
 
 
+<div class="search">
 
-<!-- ================= SERVICES ================= -->
+<input
+type="text"
+id="search"
+placeholder="🔍 ابحث عن منتج..."
+onkeyup="searchProducts()">
 
-<div class="container">
-
-
-    <h2 class="section-title">
-
-        خدمات <span>العيادة</span>
-
-    </h2>
+</div>
 
 
+<div class="categories">
 
-    <div class="services">
+<button class="category active"
+onclick="filterCategory('all',this)">
+الكل
+</button>
 
+<button class="category"
+onclick="filterCategory('cats',this)">
+🐱 القطط
+</button>
 
-        <div class="service">
+<button class="category"
+onclick="filterCategory('dogs',this)">
+🐶 الكلاب
+</button>
 
-            <div class="icon">
-                🩺
-            </div>
+<button class="category"
+onclick="filterCategory('birds',this)">
+🐦 الطيور
+</button>
 
-            <h3>
-                الفحص والمعاينة
-            </h3>
+<button class="category"
+onclick="filterCategory('care',this)">
+🧴 العناية
+</button>
 
-            <p>
-                فحص شامل وتشخيص الحالات المرضية.
-            </p>
-
-        </div>
-
-
-
-        <div class="service">
-
-            <div class="icon">
-                💉
-            </div>
-
-            <h3>
-                اللقاحات
-            </h3>
-
-            <p>
-                برامج وقائية ولقاحات للحيوانات.
-            </p>
-
-        </div>
+</div>
 
 
-
-        <div class="service">
-
-            <div class="icon">
-                ⚕️
-            </div>
-
-            <h3>
-                العمليات الجراحية
-            </h3>
-
-            <p>
-                عمليات بيطرية ورعاية متكاملة.
-            </p>
-
-        </div>
+<h2 class="section-title">
+منتجات العيادة
+</h2>
 
 
-
-        <div class="service">
-
-            <div class="icon">
-                🐾
-            </div>
-
-            <h3>
-                الرعاية البيطرية
-            </h3>
-
-            <p>
-                رعاية للقطط والكلاب والطيور.
-            </p>
-
-        </div>
+<div class="products">
 
 
-    </div>
+<div class="product" data-category="cats">
+
+<div class="product-image">🐱</div>
+
+<div class="product-content">
+
+<h3>طعام القطط الجاف</h3>
+
+<div class="price-row">
+
+<span class="price">15,000 د.ع</span>
+
+<button class="add"
+onclick="addToCart('طعام القطط الجاف',15000)">
++
+</button>
+
+</div>
+
+</div>
+
+</div>
 
 
+<div class="product" data-category="dogs">
 
-    <!-- ================= ABOUT ================= -->
+<div class="product-image">🐶</div>
 
-    <div class="about">
+<div class="product-content">
 
-        <h2>
-            عن نبض للرعاية البيطرية
-        </h2>
+<h3>طعام الكلاب</h3>
 
-        <p>
+<div class="price-row">
 
-            نهتم بصحة حيواناتكم ونوفر خدمات بيطرية متكاملة
-            تشمل الفحص والتشخيص والعلاج واللقاحات والعمليات
-            الجراحية والرعاية الصحية المختلفة.
+<span class="price">20,000 د.ع</span>
 
-        </p>
+<button class="add"
+onclick="addToCart('طعام الكلاب',20000)">
++
+</button>
 
-    </div>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="product" data-category="cats">
+
+<div class="product-image">🩺</div>
+
+<div class="product-content">
+
+<h3>علاج البراغيث للقطط</h3>
+
+<div class="price-row">
+
+<span class="price">12,000 د.ع</span>
+
+<button class="add"
+onclick="addToCart('علاج البراغيث للقطط',12000)">
++
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="product" data-category="dogs">
+
+<div class="product-image">💊</div>
+
+<div class="product-content">
+
+<h3>مكملات للكلاب</h3>
+
+<div class="price-row">
+
+<span class="price">18,000 د.ع</span>
+
+<button class="add"
+onclick="addToCart('مكملات للكلاب',18000)">
++
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="product" data-category="birds">
+
+<div class="product-image">🐦</div>
+
+<div class="product-content">
+
+<h3>طعام الطيور</h3>
+
+<div class="price-row">
+
+<span class="price">8,000 د.ع</span>
+
+<button class="add"
+onclick="addToCart('طعام الطيور',8000)">
++
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="product" data-category="care">
+
+<div class="product-image">🧴</div>
+
+<div class="product-content">
+
+<h3>شامبو للحيوانات</h3>
+
+<div class="price-row">
+
+<span class="price">10,000 د.ع</span>
+
+<button class="add"
+onclick="addToCart('شامبو للحيوانات',10000)">
++
+</button>
+
+</div>
+
+</div>
+
+</div>
 
 
 </div>
 
 
+<button class="cart-button"
+onclick="openCart()">
 
-<!-- ================= FOOTER ================= -->
+🛒 السلة
+
+<span class="cart-count"
+id="cartCount">0</span>
+
+</button>
+
+
+<div class="cart-modal"
+id="cartModal">
+
+<div class="cart-box">
+
+<button class="close"
+onclick="closeCart()">
+✕
+</button>
+
+<h2>🛒 سلة المشتريات</h2>
+
+<div id="cartItems"></div>
+
+<div class="total">
+
+المجموع:
+<span id="total">0</span>
+د.ع
+
+</div>
+
+<a href="#"
+class="order"
+onclick="sendWhatsApp()">
+
+إرسال الطلب عبر واتساب
+
+</a>
+
+</div>
+
+</div>
+
 
 <footer>
 
-    <h3>
-        نبض للرعاية البيطرية 🐾
-    </h3>
+<h3>نبض للرعاية البيطرية 🐾</h3>
 
-    <p>
-        النجف الأشرف - العراق
-    </p>
+<p>
+📍 النجف الأشرف – شارع عسكري مدارس – مقابل مضخة مياه العسكري
+</p>
 
-    <p>
-        📞 07811141207
-    </p>
+<p>📞 07811141207</p>
 
 </footer>
 
 
-</body>
+<script>
 
+let cart=[];
+
+function addToCart(name,price){
+
+let item=cart.find(x=>x.name===name);
+
+if(item){
+
+item.quantity++;
+
+}else{
+
+cart.push({
+name:name,
+price:price,
+quantity:1
+});
+
+}
+
+updateCart();
+
+}
+
+
+function updateCart(){
+
+let count=0;
+let total=0;
+
+cart.forEach(item=>{
+
+count+=item.quantity;
+
+total+=item.price*item.quantity;
+
+});
+
+document.getElementById("cartCount").innerText=count;
+
+document.getElementById("total").innerText=
+total.toLocaleString();
+
+}
+
+
+function openCart(){
+
+let container=
+document.getElementById("cartItems");
+
+container.innerHTML="";
+
+if(cart.length===0){
+
+container.innerHTML=
+"<p>السلة فارغة حالياً</p>";
+
+}
+
+cart.forEach(item=>{
+
+container.innerHTML+=`
+
+<div class="cart-item">
+
+<div>
+${item.name} × ${item.quantity}
+</div>
+
+<div>
+${(item.price*item.quantity).toLocaleString()} د.ع
+</div>
+
+</div>
+
+`;
+
+});
+
+document.getElementById("cartModal").style.display="block";
+
+}
+
+
+function closeCart(){
+
+document.getElementById("cartModal").style.display="none";
+
+}
+
+
+function sendWhatsApp(){
+
+if(cart.length===0){
+
+alert("السلة فارغة");
+
+return false;
+
+}
+
+let message=
+"مرحباً، أريد طلب المنتجات التالية من نبض للرعاية البيطرية:\n\n";
+
+let total=0;
+
+cart.forEach(item=>{
+
+message+=
+"- "+item.name+
+" × "+item.quantity+
+" = "+(item.price*item.quantity).toLocaleString()+
+" د.ع\n";
+
+total+=item.price*item.quantity;
+
+});
+
+message+="\nالمجموع الكلي: "+
+total.toLocaleString()+" د.ع";
+
+window.open(
+
+"https://wa.me/9647811141207?text="+
+encodeURIComponent(message),
+
+"_blank"
+
+);
+
+}
+
+
+function filterCategory(category,button){
+
+document.querySelectorAll(".category")
+.forEach(btn=>btn.classList.remove("active"));
+
+button.classList.add("active");
+
+document.querySelectorAll(".product")
+.forEach(product=>{
+
+if(category==="all" ||
+product.dataset.category===category){
+
+product.style.display="block";
+
+}else{
+
+product.style.display="none";
+
+}
+
+});
+
+}
+
+
+function searchProducts(){
+
+let input=
+document.getElementById("search")
+.value.toLowerCase();
+
+document.querySelectorAll(".product")
+.forEach(product=>{
+
+let text=product.innerText.toLowerCase();
+
+product.style.display=
+text.includes(input)
+?
+"block"
+:
+"none";
+
+});
+
+}
+
+</script>
+
+</body>
 </html>
